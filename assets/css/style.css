@@ -1,0 +1,49 @@
+/*Main Style*/
+
+:root {
+    --primary-color:#f5c7af;
+    --secondary-color:#64b6ac;
+    --tertiary-color: #13807c;
+    --cream: #fffce2;
+    --white: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: var(--cream);
+    
+}
+
+/* Header, Highscore and Countdown style*/
+header {
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+ .btn {
+    border: dotted 2px var(--primary-color);
+    border-radius: 50%;
+    padding: 5px 8px;
+    color: var(--white);
+    background-color: var(--secondary-color);
+    text-shadow:none;
+ }
+
+ .btn:hover {
+    background: var(--cream);
+    color: var(--tertiary-color);
+ }
+
+
+ .countdown {
+     font-size: xx-large;
+     font-weight: bold;
+     color: var(--tertiary-color);
+ }
