@@ -47,3 +47,24 @@ header {
      font-weight: bold;
      color: var(--tertiary-color);
  }
+
+ /* Main Section style*/
+ 
+ main h1, main p {
+    display: flex;
+    justify-content: center;
+}
+
+main h1 {
+    font-weight: bolder;
+    color: var(--primary-color);
+    line-height: 2;
+    padding: 15px 20px;
+}
+
+.submit-start {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: 25px 20px;
+}
