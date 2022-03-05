@@ -31,3 +31,47 @@ function startTime() {
 
 // Click event start
 startButton.addEventListener("click", startQuiz);
+
+var quizQuestions = [ 
+    {
+        question: "Commonly used data types do NOT include",
+        answers: {
+            1: "Strings",
+            2: "Booleans",
+            3: "Alerts",
+            4: "Numbers",
+        },
+         correctAnswer: "3"
+    },
+    {
+        question: "The condition in an if/else statement is enclosed with _____.",
+         answers: {
+            1: "Quotes",
+            2: "Curly brackets",
+            3: "Square brackets",
+            4: "Parenthesis",
+        },
+         correctAnswer: "4"
+    },
+    {
+        question: "Arrays in JavaScript can be used to store _____.",
+        answers: {
+            1: "Numbers and strings",
+            2: "Other arrays",
+            3: "Booleans",
+            4: "All of the above",
+        },
+         correctAnswer: "4"
+    },
+    {
+        question: "String values must be enclosed within _____ when being assigned to variables",
+        answers: {
+            1: "Commas",
+            2: "Curly Brackets",
+            3: "Quotes",
+            4: "Parenthesis"
+        },
+        correctAnswer: "3"
+    },
+
+];
