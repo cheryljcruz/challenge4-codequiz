@@ -1,38 +1,48 @@
-// Create variables to store the quiz questions
+
 // Use mouse click events to start quiz
-// - when clicked startQuiz: start timer, generate quiz
+// - when clicked startQuiz:generate quiz - timer countdown
+
 // Write for loops to cycle through quiz questions
 // Use key press events to receive user input in the form of answers to quiz questions
 // Create a time limit for the game using time functions
+// time penalty
 // Write conditional statements to determine right and wrong answers
 // Use client side storage to store highscores
-var startButton = document.querySelector("#start-btn");
+var startButton = document.querySelector("#start");
 var timeEl = document.querySelector("#timer");
+var wrapperEl = document.querySelector(".wrapper");
 var timeLeft;
 
 
  function startQuiz() {
-    timeLeft = 70;
-    startButton.disabled = true;
-
-    startTime()
+    
 }
 
+timeLeft = 70;
 function startTime() {
    
     var timeInterval = setInterval(function () {
         timeLeft--;
         timeEl.textContent = timeLeft + ' seconds remaining';
-        if (timeLeft === 0) {
+        if (timeLeft <= 0) {
             clearInterval(timeInterval);
+
+
         }
     }, 1000);
 }
 
 // Click event start
-startButton.addEventListener("click", startQuiz);
+//When button is clicked time starts and intro page is removed
+startButton.addEventListener("click", function(event) {
+    if (event.target === startButton) {
+        wrapperEl.style.display = "none";
+        //add question generator callback
+        startTime();
+    }
+})
 
-var quizQuestions = [ 
+var quizQuestionsArr = [ 
     {
         question: "Commonly used data types do NOT include",
         answers: {
@@ -69,9 +79,10 @@ var quizQuestions = [
             1: "Commas",
             2: "Curly Brackets",
             3: "Quotes",
-            4: "Parenthesis"
+            4: "Parenthesis",
         },
         correctAnswer: "3"
     },
 
 ];
+
