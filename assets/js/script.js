@@ -8,13 +8,26 @@
 // Use client side storage to store highscores
 var startButton = document.querySelector("#start-btn");
 var timeEl = document.querySelector("#timer");
+var timeLeft;
 
 
+ function startQuiz() {
+    timeLeft = 70;
+    startButton.disabled = true;
 
-var startQuiz = function (event) {
-
+    startTime()
 }
 
+function startTime() {
+   
+    var timeInterval = setInterval(function () {
+        timeLeft--;
+        timeEl.textContent = timeLeft + ' seconds remaining';
+        if (timeLeft === 0) {
+            clearInterval(timeInterval);
+        }
+    }, 1000);
+}
 
 // Click event start
 startButton.addEventListener("click", startQuiz);
