@@ -1,8 +1,3 @@
-
-// Write for loops to cycle through quiz questions
-// Use key press events to receive user input in the form of answers to quiz questions
-// time penalty
-// Write conditional statements to determine right and wrong answers
 // Use client side storage to store highscores
 var startButton = document.querySelector("#start");
 var timeEl = document.querySelector("#timer");
@@ -13,6 +8,9 @@ var answersOrdLi = document.querySelector("#answers");
 var responseDiv = document.querySelector("#response");
 var resultInput = document.querySelector(".result-input");
 var totalScore = document.querySelector("#total");
+var finalResults = document.querySelector(".final-results");
+var setResults = document.querySelector("#set-input");
+var initialInput = document.querySelector("#Initials");
 var timeLeft;
 var timeInterval;
 
@@ -176,7 +174,7 @@ function eventHandler (event) {
 
         quizContent.innerHTML = "";
     }
-};
+
 //final score display
 function displayScore() {
     resultInput.style.visibility = "visible";
@@ -187,3 +185,27 @@ function displayScore() {
     localStorage.setItem("Total Score", highScores)
 
  }
+};
+
+function setTotalScore() {
+    var finalScore = localStorage.getItem("highScores");
+    var setInitial = localStorage.getItem("Initial");
+    if (finalScore && setInitial === "") {
+        return
+    }
+    resultInput.textContent = "";
+    var resultInput = document.querySelector(".result-input");
+    resultInput.style.visibility = "visible";
+    var setResults = document.querySelector("#set-input");
+    setResults.value = setInitial + ":" + " " + finalScore;
+
+
+}
+
+document.addEventListener("submit", function (event) {
+    event.preventDefault();
+    var initialInput = document.querySelector("#Initials").value;
+    localStorage.getItem(initialInput)
+    localStorage.setItem("Initial", initialInput)
+    setTotalScore()
+})

@@ -89,7 +89,7 @@ main h1 {
 
 /* Results*/
 
-.result-input {
+.result-input, .final-results {
     margin: 0 auto;
     visibility: hidden;
 }
