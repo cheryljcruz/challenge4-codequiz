@@ -1,10 +1,6 @@
 
-// Use mouse click events to start quiz
-// - when clicked startQuiz:generate quiz - timer countdown
-
 // Write for loops to cycle through quiz questions
 // Use key press events to receive user input in the form of answers to quiz questions
-// Create a time limit for the game using time functions
 // time penalty
 // Write conditional statements to determine right and wrong answers
 // Use client side storage to store highscores
@@ -18,15 +14,12 @@ var responseDiv = document.querySelector("#response");
 var resultInput = document.querySelector(".result-input");
 var totalScore = document.querySelector("#total");
 var timeLeft;
+var timeInterval;
 
-
- function startQuiz() {
-    
-}
 // timer set to start when button is clicked
 timeLeft = 70;
 function startTime() {
-    var timeInterval = setInterval(function () {
+     timeInterval = setInterval(function () {
         timeLeft--;
         var resetTime = timeEl.textContent = timeLeft + ' seconds remaining';
         timeLeft = timeLeft;
@@ -35,7 +28,7 @@ function startTime() {
 
             timeEl.textContent = resetTime;
         }
-    }, 1000);
+    }, 1000)
 }
 
 // Click event start
@@ -58,7 +51,7 @@ var quizQuestionsArr = [
              "Alerts",
              "Numbers",
         ],
-        correctAnswer: "alerts",    
+        correct: "alerts",    
     },
     {
         question: "The condition in an if/else statement is enclosed with _____.",
@@ -68,7 +61,7 @@ var quizQuestionsArr = [
             "Square brackets",
             "Parenthesis",
          ],
-         correctAnswer: "parenthesis",
+         correct: "parenthesis",
     },
     {
         question: "Arrays in JavaScript can be used to store _____.",
@@ -78,7 +71,7 @@ var quizQuestionsArr = [
             "Booleans",
             "All of the above",
         ],
-         correctAnswer: "All of the above",
+         correct: "All of the above",
     },
     {
         question: "String values must be enclosed within _____ when being assigned to variables",
@@ -88,10 +81,10 @@ var quizQuestionsArr = [
             "Quotes",
             "Parenthesis",
         ],
-        correctAnswer: "Quotes"
+        correct: "Quotes",
     }
 
-]
+];
 
 //display questions
 function displayQuestions () {
@@ -104,6 +97,8 @@ function displayQuestions () {
 
     answersOrdLi.innerHTML = '';
 
+
+
     var listItemEl = document.createElement("li");
     listItemEl.setAttribute("class","list")
     var btnFirst = document.createElement("button");
@@ -114,7 +109,7 @@ function displayQuestions () {
     quizContent.appendChild(answersOrdLi);
 
     var listItemEl2 = document.createElement("li");
-    listItemEl2.setAttribute("class","list")
+    listItemEl2.setAttribute("class","list");
     var btnSec = document.createElement("button");
     btnSec.setAttribute("class", "buttons")
     btnSec.textContent = answerOption2;
@@ -134,9 +129,9 @@ function displayQuestions () {
     var listItemEl4 = document.createElement("li");
     listItemEl4.setAttribute("class","list")
     var btnFour = document.createElement("button");
-    btnFour.setAttribute("class", "buttons")
+    btnFour.setAttribute("class", "buttons");
     btnFour.textContent = answerOption4;
-    listItemEl4.appendChild(btnFour)
+    listItemEl4.appendChild(btnFour);
     answersOrdLi.appendChild(listItemEl4);
     quizContent.appendChild(answersOrdLi);
     var buttonEl = document.querySelectorAll("buttons")
@@ -145,26 +140,25 @@ function displayQuestions () {
     });
 //come back to this
 
-    
-}
-console.log(displayQuestions);
+};
 
 var i = 0;
 
 function eventHandler (event) {
-    if (timeLeft<=0){
+    if (timeLeft<=0) {
         clearInterval(timeInterval);
         quizContent.style.display= "none";
         displayScore();
     }
 
     var textAnswer = event.target.textContent
-    if (textAnswer === quizQuestionsArr[i].correctAnswer) {
+    if (textAnswer === quizQuestionsArr[i].correct) {
         timeLeft = timeLeft;
         responseDiv.textContent = "Right";
     } else {
       responseDiv.textContent = "Wrong";
-      timeLeft = timeLeft - 10;
+      timeLeft -=  10;
+
     }
 
     if (i < quizQuestionsArr.length-1) {
@@ -180,9 +174,9 @@ function eventHandler (event) {
             clearInterval(timeInterval);
         }, 500)
 
-        quizContent.innerHTML = '';
+        quizContent.innerHTML = "";
     }
-
+};
 //final score display
 function displayScore() {
     resultInput.style.visibility = "visible";
@@ -193,4 +187,3 @@ function displayScore() {
     localStorage.setItem("Total Score", highScores)
 
  }
-}

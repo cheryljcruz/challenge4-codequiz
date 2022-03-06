@@ -28,9 +28,9 @@ header {
     flex-wrap: wrap;
 }
  .btn, .buttons {
-    border: dotted 2px var(--primary-color);
+    border: dotted 3px var(--primary-color);
     border-radius: 50%;
-    padding: 10px 8px;
+    padding: 15px 8px;
     color: var(--white);
     background-color: var(--secondary-color);
     text-shadow:none;
@@ -41,6 +41,12 @@ header {
     background: var(--cream);
     color: var(--tertiary-color);
  }
+
+ .buttons {
+    padding: 20px 20px;
+    margin: 5px;
+    font-size: large;
+}
 
 
  .countdown {
@@ -68,6 +74,17 @@ main h1 {
     justify-content: center;
     position: relative;
     padding: 50px 60px;
+}
+
+.quiz-content {
+    align-items: center;
+    text-align: center;
+    padding: 50px 50px;
+}
+
+.answers {
+    list-style-type: None;
+    padding: 50px 15px;
 }
 
 /* Results*/
