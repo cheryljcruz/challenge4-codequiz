@@ -9,13 +9,14 @@
 
 </head>
 <body>
+    <!--Timer countdown and highscore button-->
     <header>
         <button class="btn" id="highscore" type="score">View Highscores</button>
         <div class="timer-count">
             <div class="countdown" id="timer">70</div>
         </div>
     </header>
-
+<!--Intro section and start button-->
 <main>
     <div class= "wrapper">
     <h1 class="page-title">Code Quiz</h1>
@@ -24,14 +25,24 @@
     </p>
     <div class="submit-start">
     <button class="btn" id="start" type="start">Start</button>
-    <div id="quiz"></div>
-    <div id="total"></div>
     </div>
     </div>
 </main>
-
+<!--Quiz contents to be generated-->
+<section class="quiz-content">
+    <h2 id="question">
+        <!--question displays-->
+    </h2>
+    <ol id="answers">
+        <!--answers display-->
+    </ol>
+</section>
+<!--right/wrong-->
+<div id="response"></div>
+<!--Results section and Initial input-->
 <section>
     <div class="result-input">
+        <div id="total"></div>
         <label for="initials">Initials</label>
         <input type="text" name="initials" id="Initials" placeholder="" />
         <button class="btn" id="submit" type="submit">Submit</button>
