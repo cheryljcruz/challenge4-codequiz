@@ -51,7 +51,7 @@ var quizQuestionsArr = [
              "Alerts",
              "Numbers",
         ],
-        correct: "alerts",    
+        correct: "Alerts",    
     },
     {
         question: "The condition in an if/else statement is enclosed with _____.",
@@ -61,7 +61,7 @@ var quizQuestionsArr = [
             "Square brackets",
             "Parenthesis",
          ],
-         correct: "parenthesis",
+         correct: "Parenthesis",
     },
     {
         question: "Arrays in JavaScript can be used to store _____.",
@@ -134,7 +134,7 @@ function displayQuestions () {
     listItemEl4.appendChild(btnFour);
     answersOrdLi.appendChild(listItemEl4);
     quizContent.appendChild(answersOrdLi);
-    var buttonEl = document.querySelectorAll("buttons")
+    var buttonEl = document.querySelectorAll(".buttons")
     buttonEl.forEach(function (event){
         event.addEventListener("click", eventHandler)
     });
