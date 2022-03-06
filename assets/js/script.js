@@ -1,4 +1,5 @@
 // Use client side storage to store highscores
+//- display highscores when button is clicked
 var startButton = document.querySelector("#start");
 var timeEl = document.querySelector("#timer");
 var wrapperEl = document.querySelector(".wrapper");
@@ -10,9 +11,10 @@ var resultInput = document.querySelector(".result-input");
 var totalScore = document.querySelector("#total");
 var finalResults = document.querySelector(".final-results");
 var setResults = document.querySelector("#set-input");
-var initialInput = document.querySelector("#Initials");
+var initialInput = document.querySelector("#Initials").value;
 var timeLeft;
 var timeInterval;
+
 
 // timer set to start when button is clicked
 timeLeft = 70;
