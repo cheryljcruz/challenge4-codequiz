@@ -62,6 +62,14 @@ header {
     justify-content: center;
 }
 
+main p {
+    color: var(--tertiary-color);
+    font-weight: bold;
+    font-size: medium;
+    margin: 5px;
+    text-align:center;
+}
+
 main h1 {
     font-weight: bolder;
     color: var(--primary-color);
