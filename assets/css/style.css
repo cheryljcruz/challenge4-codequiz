@@ -76,7 +76,14 @@ main h1 {
     padding: 50px 60px;
 }
 
-.quiz-content {
+#response {
+    font-weight: bold;
+    color: var(--tertiary-color);
+    font-size: xx-large;
+
+}
+
+.quiz-content, .result-input, #response{
     align-items: center;
     text-align: center;
     padding: 50px 50px;

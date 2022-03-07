@@ -1,5 +1,4 @@
-// Use client side storage to store highscores
-//- display highscores when button is clicked
+// variables
 var startButton = document.querySelector("#start");
 var timeEl = document.querySelector("#timer");
 var wrapperEl = document.querySelector(".wrapper");
@@ -138,7 +137,7 @@ function displayQuestions () {
     buttonEl.forEach(function (event){
         event.addEventListener("click", eventHandler)
     });
-//come back to this
+
 
 };
 
@@ -201,13 +200,13 @@ function setTotalScore() {
     var setResults = document.querySelector("#set-input");
     setResults.value = setInitial + ":" + " " + finalScore;
 
-
 }
 
 document.addEventListener("submit", function (event) {
     event.preventDefault();
     var initialInput = document.querySelector("#Initials").value;
     localStorage.getItem(initialInput)
-    localStorage.setItem("Initial", initialInput)
+    localStorage.setItem("Initials", initialInput)
     setTotalScore()
 })
+
